@@ -1,0 +1,35 @@
+version: '3.2'
+services:
+  database:
+    build:
+      context: ./database
+    image: bootcamp/database:latest
+    ports:
+      - 5432:5432
+    container_name: database
+    networks:
+      - backend
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    container_name: vinyl-ecommerce-api
+    environment:
+      - POSTGRES_URL=database
+      - POSTGRES_USER=bootcamp
+      - POSTGRES_PASSWORD=bootcamppass
+      - POSTGRES_DATABASE=bootcamp
+      - SPOTIFY_CLIENT_ID=13f52b9b7f204d5a81331f3cf7690f2e
+      - SPOTIFY_CLIENT_SECRET=e08c5207a9ff4e4180eb8c6673e0f6a4
+      - API_SECURITY_TOKEN_SECRET=my-secret-key
+    depends_on:
+      - database
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: "bridge"

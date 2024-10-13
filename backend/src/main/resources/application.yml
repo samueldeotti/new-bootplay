@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: backend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bootcamp
+    username: bootcamp
+    password: bootcamppass
+  jpa:
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    defer-datasource-initialization: true
+api:
+  security:
+    token:
+      secret: my-secret-key
+spotify:
+  client-id: 13f52b9b7f204d5a81331f3cf7690f2e
+  client-secret: e08c5207a9ff4e4180eb8c6673e0f6a4
