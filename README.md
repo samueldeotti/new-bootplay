@@ -70,7 +70,7 @@ To stop the application, press `Ctrl + C` in the terminal where Docker Compose a
 - /login: `User login page`
 - /signup: `User signup page`
 - /dashboard: `Dashboard for viewing, searching, and buying albums`
-- /wallet `Page to view balance and points, and credit balance to the wallet`
+- /wallet `Page to view balance, points and user transactions, and credit balance to the wallet`
 - /albums/my-collection: `Page to view and manage the user's album collection`
 
 ## Backend
