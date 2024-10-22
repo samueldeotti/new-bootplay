@@ -4,13 +4,11 @@ This project aims to develop a fullstack application for a vinyl record e-commer
 
 ## Technologies Used
 
-For the development of this application, **Java** was used alongside the **Spring Boot** framework, providing a robust structure for building the backend services following the principles of RESTful architecture. 
+For the development of this application, **Java** was used alongside the **Spring Boot** framework, providing a structure for building the backend services following the principles of RESTful architecture. 
 
 On the frontend, **React** with **TypeScript** was utilized to create a dynamic and type-safe user interface.
 
 The database management was handled by **PostgreSQL**, with queries and data manipulations abstracted by the Spring Data JPA.
-
-For message brokering and asynchronous communication between microservices, **RabbitMQ** was implemented.
 
 Additionally, unit tests were written to ensure the reliability of the application, and **Docker** was used for containerization, making the deployment process more efficient and consistent.
 
@@ -20,7 +18,6 @@ Additionally, unit tests were written to ensure the reliability of the applicati
 - Endpoints that interact with the PostgreSQL database, supporting CRUD operations;
 - Middlewares for validating request data and ensuring the user is authenticated and authorized to perform specific actions;
 - A frontend interface built with React and TypeScript, offering a responsive and type-safe user experience;
-- Asynchronous communication between services using RabbitMQ;
 - Unit tests to verify the correctness of the application logic;
 - Containerization of the application with Docker, ensuring consistency across different environments.
 
@@ -59,6 +56,23 @@ Additionally, unit tests were written to ensure the reliability of the applicati
     ```bash
     http://localhost:5173/
     ```
+#### Testing
+
+Nearly all components have been tested, with a few exceptions.
+
+## Running Tests
+In frontend folder
+
+You can run this to see if they pass.
+```bash
+npm test
+``` 
+
+Run this to see the coverage.
+```bash
+npm run coverage
+```
+    
 
 ### How to Stop the Frontend Application
 
@@ -66,12 +80,13 @@ To stop the application, press `Ctrl + C` in the terminal where Docker Compose a
 
 ### Frontend Routes
 
-- /: `Landing page`
-- /login: `User login page`
-- /signup: `User signup page`
-- /dashboard: `Dashboard for viewing, searching, and buying albums`
-- /wallet `Page to view balance, points and user transactions, and credit balance to the wallet`
-- /albums/my-collection: `Page to view and manage the user's album collection`
+- `/`: `Landing page`
+- `/signin`: `User sign-in page`
+- `/signup`: `User sign-up page`
+- `/dashboard`: `Dashboard for viewing, searching, and buying albums`
+- `/albums/my-collection`: `Page to view and manage the user's album collection`
+- `/wallet`: `Page to view and manage wallet balance, points, and see user transactions`
+- `/profile`: `Page to view and change user personal info, such as name, email, and password`
 
 ## Backend
 
@@ -94,6 +109,8 @@ The vinyl record e-commerce has implemented a loyalty program based on points to
     ```bash
     docker compose up --build
     ```
+4. Access the API:
+   - Once the application is running, you can access the API [Local Host](http://localhost:8080/) and [API DOCS](http://localhost:8080/swagger-ui/index.html#/), here you can find all endpoints and documentation.
 
 ### How to Stop the Backend Application
 
